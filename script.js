@@ -8,16 +8,16 @@ let col = document.querySelector("#insidewin")
 
 const choices = document.querySelectorAll(".box")
 
-const wingame = () => {
+const wingame = (compChoice) => {
     userScore++;
     userScorepara.innerText = userScore
-    review.innerText = "You win";
+    review.innerText = `You Won, defeating ${compChoice}`;
     col.style.backgroundColor = "green"
 }
-const losegame =() =>{
+const losegame =(compChoice) =>{
     compScore++;
     compScorepara.innerText = compScore;
-    review.innerText = "You lost, Try again";
+    review.innerText = `You lost, with ${compChoice}`;
     col.style.backgroundColor = "red"
 }
 
@@ -35,13 +35,13 @@ const playGame = (userChoice) =>{
     }
     else{
         if(userChoice === "rock"){
-            compChoice === "paper"? losegame() : wingame();
+            compChoice === "paper"? losegame(compChoice) : wingame(compChoice);
         }
         else if(userChoice === "paper"){
-            compChoice === "scissor"? losegame() : wingame();
+            compChoice === "scissor"? losegame(compChoice) : wingame(compChoice);
         }
         else{
-            compChoice === "rock"? losegame() : wingame();
+            compChoice === "rock"? losegame(compChoice) : wingame(compChoice);
         }
     }
 };

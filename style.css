@@ -3,11 +3,19 @@
     padding: 0;
     text-align: center;
 }
+#headarea{
+    position: fixed;
+    width: 100%;
+    z-index: 1;
+}
 #heading{
     background-color: #2e2e2e;
     color: #ffffff;
     height: 4rem;
     line-height: 4rem;
+}
+#gamearea{
+    padding-top: 3.5rem;
 }
 img{
     height: 10rem;
